@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float MoveSpeed = 7f;
     [SerializeField] private float JumpForce = 14f;
 
+    private enum MovementState {idle, run, jump, fall }
     // Start is called before the first frame update
     void Start()
     {
@@ -33,19 +34,29 @@ public class PlayerMovement : MonoBehaviour
     }
     private void UpdateAnimationUpdate()
     {
+        MovementState state;
         if (dirX > 0f)
         {
-            anim.SetBool("Running", true);
+            state = MovementState.run;
             sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
-            anim.SetBool("Running", true);
+            state = MovementState.run;
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("Running", false);
+            state = MovementState.idle;
         }
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jump;
+        }
+        else if(rb.velocity.y < -.1f)
+            {
+                state = MovementState.fall;
+            }
+        anim.SetInteger("state", (int)(state));
     }
 }
