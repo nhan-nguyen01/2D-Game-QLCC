@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fb57fb87222adda4daacdb4e0dcb4cfb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Mynerve
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2e825beb4e8c5aa488572c6bfa85b95b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
